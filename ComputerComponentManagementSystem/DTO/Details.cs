@@ -8,25 +8,25 @@ public class Details
     public int Warranty { get; set; }
     public DateTime CreatedAt { get; set; }
     public int Stock { get; set; }
-    public List<PCComponentDto> Components { get; set; } = new();
+    public List<ComponentEntry> Components { get; set; } = new();
 }
 
-public class PCComponentDto
+public class ComponentEntry
 {
     public int Amount { get; set; }
-    public ComponentDto Component { get; set; } = null!;
+    public ComponentInfo Component { get; set; } = null!;
 }
 
-public class ComponentDto
+public class ComponentInfo
 {
     public string Code { get; set; } = null!;
     public string Name { get; set; } = null!;
     public string? Description { get; set; }
-    public ManufacturerDto Manufacturer { get; set; } = null!;
-    public ComponentTypeDto Type { get; set; } = null!;
+    public ManufacturerInfo Manufacturer { get; set; } = null!;
+    public TypeInfo Type { get; set; } = null!;
 }
 
-public class ManufacturerDto
+public class ManufacturerInfo
 {
     public int Id { get; set; }
     public string Abbreviation { get; set; } = null!;
@@ -34,7 +34,7 @@ public class ManufacturerDto
     public DateTime FoundationDate { get; set; }
 }
 
-public class ComponentTypeDto
+public class TypeInfo
 {
     public int Id { get; set; }
     public string Abbreviation { get; set; } = null!;
